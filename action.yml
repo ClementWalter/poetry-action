@@ -30,7 +30,7 @@ runs:
 
         # add it to path for currently and future steps
         $env:PATH = '{0}{1}{2}' -f (Join-Path -Path '${{ github.workspace }}/.installed-poetry/' -ChildPath 'bin'),[IO.Path]::PathSeparator,$env:PATH
-        Write-Output 'PATH=$env:PATH' | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8
+        Write-Output "PATH=$env:PATH" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8
 
         poetry config virtualenvs.create true
         poetry config virtualenvs.in-project false
